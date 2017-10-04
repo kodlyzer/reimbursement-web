@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { LayoutModule } from './layout/layout.module';
 import { DashboardModule} from './dashboard/dashboard.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
+import { ExpenseModule } from "./expense/expense.module";
 
 @NgModule({
   declarations: [
@@ -15,10 +14,10 @@ import { MainComponent } from './main/main.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
+    AppRoutingModule,
     LayoutModule,
     DashboardModule,
-    AppRoutingModule
+    ExpenseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

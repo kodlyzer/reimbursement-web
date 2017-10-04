@@ -7,11 +7,13 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   imports: [
     CommonModule,
-    MdSidenavModule
+    MdSidenavModule,
+    RouterModule
   ],
   exports: [
     LayoutComponent
