@@ -1,0 +1,32 @@
+﻿<div class="container">
+    <div class="row col-md-10 col-md-offset-1 custyle">
+        <table class="table table-striped custab">
+            <thead>
+            <tr>
+                <th>Expense Id</th>
+                <th>Expense Date</th>
+                <th>Submit Date</th>
+                <th>Approved Date</th>
+                <th>Expense Amount</th>
+                <th>Approver Name</th>
+                <th>Status</th>
+                <th class="text-center">Details</th>
+                <th class="text-center">Upload Documents</th>
+                <th class="text-center">Edit</th>
+            </tr>
+            </thead>
+            <tr  *ngFor="let e of expenses">
+                <td>{{e.expenseId}}</td>
+                <td>{{e.expenseDate}}</td>
+                <td>{{e.submitDate}}</td>
+                <td>{{e.approvedDate}}</td>
+                <td>{{e.totalAmount}}</td>
+                <td>{{e.approverName}}</td>
+                <td>{{e.ticketStatus}}</td>
+                <td class="text-center"><a [routerLink]="['/detail-view/', e.expenseId]"class='btn btn-info btn-sm'><span class="glyphicon glyphicon-book"></span> Details</a></td>
+                <td class="text-center"><a [routerLink]="['/upload-document/', e.expenseId]"class='btn btn-info btn-sm'><span class="glyphicon glyphicon-book"></span> Upload Document</a></td>
+                <td class="text-center"><a [routerLink]="['/edit-expense/', e.expenseId]" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

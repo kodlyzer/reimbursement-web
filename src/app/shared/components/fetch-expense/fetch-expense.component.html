@@ -1,0 +1,153 @@
+﻿﻿<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group" id="adv-search">
+                <input type="text" class="form-control" placeholder="Search for expense by Id or Name or Designation or Manager" #expenseIdInput/>
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary" (click)="searchExpense()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        <button type="button" class="btn btn-danger" (click)="clearExpense()"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form *ngIf="showHide"  class="form-horizontal">
+    <fieldset *ngFor="let e of expenses">
+        <!-- Form Name -->
+        <legend>Fetched Expense</legend>
+        
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="expid">Expense ID</label>
+            <div class="col-md-4">
+                <input id="expid" name="expid" placeholder="Expense ID" value="{{e.expenseId}}" #expenseIdValue class="form-control input-md" required="" type="text" #expIdInput>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="empid">Employee ID</label>
+            <div class="col-md-4">
+                <input id="empid" name="empid" placeholder="Employee ID" value="{{e.employeeId}}" class="form-control input-md" required="" type="text">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="name">Employee Name</label>
+            <div class="col-md-4">
+                <input id="name" name="name" placeholder="Name" value="{{e.employeeName}}" class="form-control input-md" required="" type="text">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="edob">Expense Date</label>
+            <div class="col-md-4">
+                <input id="edob" name="edob" placeholder="Expense Date" value="{{e.expenseDate}}" class="form-control input-md" required="" type="text">
+                <span class="help-block">format :DD/MM/YYYY</span>
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="sdob">Submit Date</label>
+            <div class="col-md-4">
+                <input id="sdob" name="sdob" placeholder="Submit Date" value="{{e.submitDate}}" class="form-control input-md" required="" type="text">
+                <span class="help-block">format :DD/MM/YYYY</span>
+            </div>
+        </div>
+        <!--Readonly-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="adob">Approved Date</label>
+            <div class="col-md-4">
+                <input id="adob" name="adob" placeholder="Approved Date" value="{{e.approvedDate}}" required class="form-control input-md" required="" type="text" #approvedDate>
+                <span class="help-block">format :DD/MM/YYYY</span>
+            </div>
+        </div>
+        <!-- Expense Category -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="selectExpCategory">Expense Category</label>
+            <div class="col-md-4">
+                <select id="selectExpCategory" name="selectExpCategory" class="form-control">
+                    <option value="{{e.expCategory.categoryId}}">{{e.expCategory.category}}</option>
+                </select>
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="amount">Amount</label>
+            <div class="col-md-4">
+                <input id="amount" name="amount" placeholder="Amount" value="{{e.amount}}" class="form-control input-md" required="" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="totalamount">Total Amount</label>
+            <div class="col-md-4">
+                <input id="totalamount" name="totalamount" value="{{e.totalAmount}}" placeholder="Total Amount" class="form-control input-md" required="" type="text">
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="expenseDetails">Expense Details</label>
+            <div class="col-md-4">
+                <input id="expenseDetails" name="expenseDetails" placeholder="Expense Details" value="{{e.expenseDetails}}" class="form-control input-md" required="" type="text">
+            </div>
+        </div>
+        <!-- Upload input-->
+        <!--<div class="form-group">
+            <label class="col-md-4 control-label" for="docupload">Upload Documents</label>
+            <div class="col-md-4">
+                <input type="file" #fileInput />
+            </div>
+        </div>-->
+    
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="approvername">Approver Name</label>
+            <div class="col-md-4">
+                <input id="approvername" name="approvername" placeholder="Approver Name" value="{{e.approverName}}" class="form-control input-md" required="" type="text">
+            </div>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="reason">Reason</label>
+            <div class="col-md-4">
+                <input id="reason" name="reason" placeholder="Reason" class="form-control input-md" value="{{e.reason}}" required #reasonInput type="text">
+            </div>
+        </div>
+        
+     <!--   <div class="form-group">
+            <label class="col-md-4 control-label" for="send">Fetch Documents</label>
+            <div class="col-md-4">
+                <button id="fetch" name="fetch" type="button" (click)="fetchDocs(expenseIdValue)" class="btn btn-primary">Fetch Docs</button>
+                </div>
+        </div>-->
+        
+        <!--Doc View/Download -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="reason">Your Documents</label>
+            <img *ngFor="let doc of docs" src="/uploads/{{doc.docName}}" class="img-thumbnail" style="width: 200px; height: 200px;" />
+        </div>
+        
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="reason">Your PDF Documents</label>
+            <iframe *ngFor="let pdf of pdfs" [src]="pdf.docName" style="width:300px; height:300px;" frameborder="0"></iframe>
+
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="send">Submit</label>
+            <div class="col-md-4">
+                <button id="send" name="send" type="submit" (click)="approveExpense(expIdInput,reasonInput,approvedDate)" class="btn btn-primary">Approve</button>
+                <button id="cancel" name="cancel" type="button" (click)="rejectExpense(expIdInput,reasonInput,approvedDate)" class="btn btn-danger">Reject</button>
+            </div>
+        </div>
+        
+    </fieldset>
+</form>
