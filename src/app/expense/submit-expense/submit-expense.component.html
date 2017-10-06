@@ -1,3 +1,24 @@
-<p>
-  submit-expense works!
-</p>
+<div class="block-header">
+  <h2>SUBMIT EXPENSE</h2>
+</div>
+
+<md-card>
+    <md-form-field>
+        <input mdInput [mdDatepicker]="expenseDatePicker" placeholder="Expense Date">
+        <md-datepicker-toggle mdSuffix [for]="expenseDatePicker"></md-datepicker-toggle>
+        <md-datepicker #expenseDatePicker></md-datepicker>
+    </md-form-field>
+
+    <md-form-field>
+        <input mdInput [mdDatepicker]="submitDatePicker" placeholder="Submit Date">
+        <md-datepicker-toggle mdSuffix [for]="submitDatePicker"></md-datepicker-toggle>
+        <md-datepicker #submitDatePicker></md-datepicker>
+    </md-form-field>
+
+    <md-select placeholder="Expense Category">
+        <md-option *ngFor="let food of [{value: 1}, {value: 2}, {value: 3}]" [value]="food.value">
+          {{ test }}
+        </md-option>
+    </md-select>
+  
+</md-card>
