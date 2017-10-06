@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { ExpenseModule } from "./expense/expense.module";
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { ExpenseModule } from "./expense/expense.module";
     AppRoutingModule,
     LayoutModule,
     DashboardModule,
-    ExpenseModule
+    ExpenseModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
