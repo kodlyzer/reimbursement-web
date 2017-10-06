@@ -10,8 +10,8 @@ import { RouterModule, Routes } from "@angular/router";
               path: '',
               redirectTo: '/home',
               pathMatch: 'full'
-            }],
-            { enableTracing: true } // <-- debugging purposes only
+            }]
+           // { enableTracing: true } // <-- debugging purposes only
           )
     ],
     exports: [RouterModule]
