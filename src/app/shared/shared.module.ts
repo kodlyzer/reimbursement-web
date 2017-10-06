@@ -63,6 +63,7 @@ import { UploadDocumentComponent } from './components/upload-documents/upload-do
     EditEmployeeComponent,
     UploadDocumentComponent
   ],
+  exports: [ToastyModule],
   providers: [
     { provide: 'BASE_URL', useValue: 'http://localhost:62166/' },
     EmployeeService,
