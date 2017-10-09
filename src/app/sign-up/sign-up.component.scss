@@ -1,0 +1,15 @@
+$signup-base-color: #00BCD4;
+
+main {
+    background-color: inherit;
+    .signup-box {
+        .logo {
+            a {
+                color : $signup-base-color;
+            }
+            small {
+                color : $signup-base-color;
+            }
+        }
+    }
+}

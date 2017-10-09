@@ -37,20 +37,7 @@ import { UploadDocumentComponent } from './components/upload-documents/upload-do
     HttpModule,
     FormsModule,
     ToastyModule.forRoot(),
-    RouterModule.forRoot([
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'employee', component: EmployeeComponent },
-      { path: 'new-employee', component: NewEmployeeComponent },
-      { path: 'search-employee', component: SearchEmployeeComponent },
-      { path: 'new-expense', component: NewExpenseComponent },
-      { path: 'fetch-expense', component: FetchExpenseComponent },
-      { path: 'my-expenses', component: MyExpensesComponent },
-      { path: 'detail-view/:id', component: DetailViewComponent },
-      { path: 'edit-expense/:id', component: EditExpenseComponent },
-      { path: 'edit-employee', component: EditEmployeeComponent },
-      { path: 'upload-document/:id', component: UploadDocumentComponent }
-    ])
+    RouterModule.forRoot([])
   ],
   declarations: [
     FetchDataComponent,

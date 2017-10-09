@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { ExpenseModule } from "./expense/expense.module";
 import { SharedModule } from './shared/shared.module';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
