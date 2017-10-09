@@ -1,24 +1,48 @@
-<div class="block-header">
-  <h2>SUBMIT EXPENSE</h2>
+<div class="row clearfix">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="header">
+        <h2>
+          Submit Expense
+        </h2>
+      </div>
+      <div class="body">
+        <form (ngSubmit)="onSubmit(f)" #newExpenseFrom="ngForm" role="form">
+          <div class="kr-form-inputs">
+            <md-form-field>
+              <input name="expense-date" mdInput [mdDatepicker]="expenseDatePicker" placeholder="Expense Date" [(ngModel)]="expense.expenseDate" required="true">
+              <md-datepicker-toggle mdSuffix [for]="expenseDatePicker"></md-datepicker-toggle>
+              <md-datepicker #expenseDatePicker></md-datepicker>
+            </md-form-field>
+            <md-form-field>
+              <input name="submit-date" mdInput [mdDatepicker]="submitDatePicker" placeholder="Submit Date" [(ngModel)]="expense.submitDate" required="true">
+              <md-datepicker-toggle mdSuffix [for]="submitDatePicker"></md-datepicker-toggle>
+              <md-datepicker #submitDatePicker></md-datepicker>
+            </md-form-field>
+            <md-select name="category" placeholder="Expense Category" [(ngModel)]="expense.expCategory.categoryId" required="true">
+              <md-option *ngFor="let exp of expCategories" [value]="exp.categoryId">
+                {{ exp.category }}
+              </md-option>
+            </md-select>
+            <md-form-field>
+                <input name="amount" mdInput placeholder="Amount" [(ngModel)]="expense.amount" required="true">
+            </md-form-field>
+            <md-form-field>
+                <input name="total-amount" mdInput placeholder="Total Amount" [(ngModel)]="expense.totalAmount" required="true">
+            </md-form-field>
+            <md-form-field>
+                <input name="details" mdInput placeholder="Expense Details" [(ngModel)]="expense.expenseDetails" required="true">
+            </md-form-field>
+            <md-select name="reporting-manager" placeholder="Reporting Manager" [(ngModel)]="expense.approverId" required="true">
+                <md-option *ngFor="let approver of approvers" [value]="approver.approverId" >
+                  {{ approver.name }}
+                </md-option>
+              </md-select>
+          </div>
+          <br/>
+          <button type="submit" md-raised-button class="btn btn-primary m-t-15 m-l-10" *ngIf="newExpenseFrom.valid">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
-
-<md-card>
-    <md-form-field>
-        <input mdInput [mdDatepicker]="expenseDatePicker" placeholder="Expense Date">
-        <md-datepicker-toggle mdSuffix [for]="expenseDatePicker"></md-datepicker-toggle>
-        <md-datepicker #expenseDatePicker></md-datepicker>
-    </md-form-field>
-
-    <md-form-field>
-        <input mdInput [mdDatepicker]="submitDatePicker" placeholder="Submit Date">
-        <md-datepicker-toggle mdSuffix [for]="submitDatePicker"></md-datepicker-toggle>
-        <md-datepicker #submitDatePicker></md-datepicker>
-    </md-form-field>
-
-    <md-select placeholder="Expense Category">
-        <md-option *ngFor="let food of [{value: 1}, {value: 2}, {value: 3}]" [value]="food.value">
-          {{ test }}
-        </md-option>
-    </md-select>
-  
-</md-card>

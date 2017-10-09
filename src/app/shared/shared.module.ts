@@ -1,3 +1,5 @@
+
+import { baseUrl } from './shared.config';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +27,7 @@ import { DetailViewComponent } from './components/detail-view/detail-view.compon
 import { EditExpenseComponent } from './components/edit-expense/edit-expense.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
 import { UploadDocumentComponent } from './components/upload-documents/upload-document.component';
+
 
 @NgModule({
   imports: [
@@ -63,9 +66,13 @@ import { UploadDocumentComponent } from './components/upload-documents/upload-do
     EditEmployeeComponent,
     UploadDocumentComponent
   ],
-  exports: [ToastyModule],
+  exports: [
+    HttpModule,
+    FormsModule,
+    ToastyModule
+  ],
   providers: [
-    { provide: 'BASE_URL', useValue: 'http://localhost:62166/' },
+    { provide: 'BASE_URL', useValue: baseUrl },
     EmployeeService,
     ExpenseService,
     ApproverService,

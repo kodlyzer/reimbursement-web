@@ -1,0 +1,14 @@
+form {
+    .kr-form-inputs {
+        display: flex;
+        flex-direction: column;
+        md-select, md-form-field {
+            width: 100%;
+            padding: 10px;
+        }
+    }
+    button {
+        padding: 10px;
+        color: white;
+    }
+}
