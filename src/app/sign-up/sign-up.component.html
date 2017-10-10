@@ -7,30 +7,97 @@
     <div class="card">
       <div class="body">
         <form id="sign_up" method="POST">
-          <div class="kr-form-inputs">
-            <!-- <md-form-field>
-              <input name="expense-date" mdInput [mdDatepicker]="expenseDatePicker" placeholder="Expense Date" [(ngModel)]="expense.expenseDate" required="true">
-              <md-datepicker-toggle mdSuffix [for]="expenseDatePicker"></md-datepicker-toggle>
-              <md-datepicker #expenseDatePicker></md-datepicker>
-            </md-form-field>
-            
+          <div class="kr-form-inputs-container">
+              <div class="kr-form-inputs">
+                  <md-form-field>
+                    <input mdInput name="empid"  placeholder="Employee ID" [(ngModel)]="employee.employeeId" required="true" type="text">
+                  </md-form-field>
+                  <md-select name="gender" placeholder="Gender" [(ngModel)]="employee.gender">
+                    <md-option value="M">Male</md-option>
+                    <md-option value="F">Female</md-option>
+                    <md-option value="D">Don't want to disclose</md-option>
+                  </md-select>
+                  <md-form-field>
+                    <input mdInput name="name" placeholder="Name" required="true" [(ngModel)]="employee.employeeName" type="text">
+                  </md-form-field>
+                  <md-form-field>
+                    <input mdInput name="designation" placeholder="Desgination" required="true" [(ngModel)]="employee.designation">
+                  </md-form-field>
+                  <md-form-field>
+                    <input mdInput name="dob" [mdDatepicker]="dob" placeholder="Date of Birth" [(ngModel)]="employee.dob">
+                    <md-datepicker-toggle mdSuffix [for]="dob"></md-datepicker-toggle>
+                    <md-datepicker #dob></md-datepicker>
+                  </md-form-field>
+                  <md-form-field>
+                      <input mdInput name="skill" placeholder="Skill Set" required="true" [(ngModel)]="employee.skillSet">
+                  </md-form-field>
+                  <md-form-field>
+                      <input mdInput name="email" placeholder="Email" required="true" type="text" [(ngModel)]="employee.email">
+                  </md-form-field>
+                  <md-form-field>
+                      <input mdInput name="mobile" placeholder="Mobile" required="true" type="text" [(ngModel)]="employee.mobile">
+                  </md-form-field>
+                  
+                </div>
 
-            <md-select name="category" placeholder="Expense Category" [(ngModel)]="expense.expCategory.categoryId" required="true">
-              <md-option *ngFor="let exp of expCategories" [value]="exp.categoryId">
-                {{ exp.category }}
-              </md-option>
-            </md-select>
-
-            <md-form-field>
-                <input name="amount" mdInput placeholder="Amount" [(ngModel)]="expense.amount" required="true">
-            </md-form-field> -->
-
-            <md-form-field>
-              <input name="empid" mdInput placeholder="Employee ID" [(ngModel)]="employee.employeeId" required="true" type="text">
-            </md-form-field>
-
-            
+                <div class="kr-form-inputs">
+                    <md-form-field>
+                        <input mdInput name="alternatenumber" placeholder="Alternate Number" [(ngModel)]="employee.alternateNumber" required="true">
+                    </md-form-field>
+                    <md-form-field>
+                        <input mdInput name="AddressLine1" placeholder="Address Line 1" required="true" type="text" [(ngModel)]="employee.addressLine1">
+                    </md-form-field>
+                    <md-form-field>
+                        <input mdInput name="AddressLine2" placeholder="Address Line 2" [(ngModel)]="employee.addressLine2" required="true">
+                    </md-form-field>
+                    <md-form-field>
+                        <input mdInput name="AddressLine3" placeholder="Address Line 3" [(ngModel)]="employee.addressLine3" type="text">
+                    </md-form-field>
+                    <md-form-field>
+                        <input mdInput name="zipCode" placeholder="ZipCode" [(ngModel)]="employee.zipCode" required="true" type="text">
+                    </md-form-field>
+        
+                    <md-form-field>
+                        <input mdInput name="country" placeholder="Country" [(ngModel)]="employee.country" required="true" type="text">
+                    </md-form-field>
+        
+                    <md-form-field>
+                        <input mdInput name="state" placeholder="State" [(ngModel)]="employee.state" required="true" type="text">
+                    </md-form-field>
+                </div>
+      
+                <div class="kr-form-inputs">
+                    <md-form-field>
+                        <input mdInput name="fathername" placeholder="Father's Name" [(ngModel)]="employee.fatherName" required="true" type="text">
+                    </md-form-field>
+                    <md-form-field>
+                        <input mdInput name="mothername" placeholder="Mother's Name" [(ngModel)]="employee.motherName" required="true" type="text">
+                    </md-form-field>
+        
+                    <md-form-field>
+                        <input mdInput name="mdob" placeholder="Mother Date Of Birth" [(ngModel)]="employee.motherDob" required="true" type="text">
+                    </md-form-field>
+        
+                    <md-form-field>
+                        <input mdInput name="emergencycontactname" placeholder="Emergency Contact Name" [(ngModel)]="employee.emergencyContactName" required="true" type="text">
+                    </md-form-field>
+                    <md-form-field>
+                        <input mdInput name="emergencycontactrelation" placeholder="Emergency Contact Relation" [(ngModel)]="employee.emergencyContactRelation" required="true" type="text">
+                    </md-form-field>
+                    <md-form-field>
+                        <input mdInput name="emergencycontactnumber" placeholder="Emergency Contact Number" [(ngModel)]="employee.emergencyContactNumber" required="true" type="text">
+                    </md-form-field>
+                    <md-form-field>
+                        <input mdInput name="edob" placeholder="Emergency Contact Date Of Birth" [(ngModel)]="employee.emergencyContactDOB" required="true" type="text">
+                    </md-form-field>
+                    <md-select name="selectApprover" placeholder="Reporting Manager" [(ngModel)]="employee.reportingManager" required="true">
+                        <md-option *ngFor="let approver of approvers" [value]="approver.name">
+                          {{ approver.name }}
+                        </md-option>
+                    </md-select>
+                </div>
           </div>
+          
 
           <button md-raised-button class="btn btn-block btn-lg bg-pink" type="submit">SIGN UP</button>
         </form>
