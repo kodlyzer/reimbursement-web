@@ -39,13 +39,6 @@ import { SignUpComponent } from "./sign-up/sign-up.component";
                     { path: 'edit-employee', component: EditEmployeeComponent },
                     { path: 'upload-document/:id', component: UploadDocumentComponent }
                 ]
-            }, {
-                path: 'signup',
-                component: SignUpComponent
-            }, { 
-                path: '',
-                redirectTo: '/home',
-                pathMatch: 'full'
             }]
            // { enableTracing: true } // <-- debugging purposes only
           )

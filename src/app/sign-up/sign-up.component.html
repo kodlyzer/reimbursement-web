@@ -7,40 +7,32 @@
     <div class="card">
       <div class="body">
         <form id="sign_up" method="POST">
-          <div class="input-group">
-            <span class="input-group-addon">
-                            <i class="material-icons">person</i>
-                        </span>
-            <div class="form-line">
-              <input type="text" class="form-control" name="namesurname" placeholder="Name Surname" required autofocus>
-            </div>
-          </div>
-          <div class="input-group">
-            <span class="input-group-addon">
-                            <i class="material-icons">email</i>
-                        </span>
-            <div class="form-line">
-              <input type="email" class="form-control" name="email" placeholder="Email Address" required>
-            </div>
-          </div>
-          <div class="input-group">
-            <span class="input-group-addon">
-                            <i class="material-icons">lock</i>
-                        </span>
-            <div class="form-line">
-              <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
-            </div>
-          </div>
-          <div class="input-group">
-            <span class="input-group-addon">
-                            <i class="material-icons">lock</i>
-                        </span>
-            <div class="form-line">
-              <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Confirm Password" required>
-            </div>
+          <div class="kr-form-inputs">
+            <!-- <md-form-field>
+              <input name="expense-date" mdInput [mdDatepicker]="expenseDatePicker" placeholder="Expense Date" [(ngModel)]="expense.expenseDate" required="true">
+              <md-datepicker-toggle mdSuffix [for]="expenseDatePicker"></md-datepicker-toggle>
+              <md-datepicker #expenseDatePicker></md-datepicker>
+            </md-form-field>
+            
+
+            <md-select name="category" placeholder="Expense Category" [(ngModel)]="expense.expCategory.categoryId" required="true">
+              <md-option *ngFor="let exp of expCategories" [value]="exp.categoryId">
+                {{ exp.category }}
+              </md-option>
+            </md-select>
+
+            <md-form-field>
+                <input name="amount" mdInput placeholder="Amount" [(ngModel)]="expense.amount" required="true">
+            </md-form-field> -->
+
+            <md-form-field>
+              <input name="empid" mdInput placeholder="Employee ID" [(ngModel)]="employee.employeeId" required="true" type="text">
+            </md-form-field>
+
+            
           </div>
 
-          <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">SIGN UP</button>
+          <button md-raised-button class="btn btn-block btn-lg bg-pink" type="submit">SIGN UP</button>
         </form>
       </div>
     </div>
