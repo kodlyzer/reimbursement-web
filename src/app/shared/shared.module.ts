@@ -1,3 +1,5 @@
+
+import { baseUrl } from './shared.config';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +28,7 @@ import { EditExpenseComponent } from './components/edit-expense/edit-expense.com
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
 import { UploadDocumentComponent } from './components/upload-documents/upload-document.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -34,20 +37,7 @@ import { UploadDocumentComponent } from './components/upload-documents/upload-do
     HttpModule,
     FormsModule,
     ToastyModule.forRoot(),
-    RouterModule.forRoot([
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'employee', component: EmployeeComponent },
-      { path: 'new-employee', component: NewEmployeeComponent },
-      { path: 'search-employee', component: SearchEmployeeComponent },
-      { path: 'new-expense', component: NewExpenseComponent },
-      { path: 'fetch-expense', component: FetchExpenseComponent },
-      { path: 'my-expenses', component: MyExpensesComponent },
-      { path: 'detail-view/:id', component: DetailViewComponent },
-      { path: 'edit-expense/:id', component: EditExpenseComponent },
-      { path: 'edit-employee', component: EditEmployeeComponent },
-      { path: 'upload-document/:id', component: UploadDocumentComponent }
-    ])
+    RouterModule.forRoot([])
   ],
   declarations: [
     FetchDataComponent,
@@ -63,9 +53,17 @@ import { UploadDocumentComponent } from './components/upload-documents/upload-do
     EditEmployeeComponent,
     UploadDocumentComponent
   ],
-  exports: [ToastyModule],
+  exports: [
+    HttpModule,
+    FormsModule,
+    ToastyModule
+  ],
   providers: [
+<<<<<<< HEAD
     { provide: 'BASE_URL', useValue: 'http://localhost:7000/' },
+=======
+    { provide: 'BASE_URL', useValue: baseUrl },
+>>>>>>> 4b1c3f8b40882f217cfa15e9f9c7f41a7521c363
     EmployeeService,
     ExpenseService,
     ApproverService,

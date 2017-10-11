@@ -1,0 +1,34 @@
+$signup-base-color: #00BCD4;
+
+main {
+    background-color: inherit;
+    max-width: 680px;
+    margin: 0 auto;
+    .signup-box {
+        .logo {
+            a {
+                color : $signup-base-color;
+            }
+            small {
+                color : $signup-base-color;
+            }
+        }
+
+        form {
+            .kr-form-inputs-container {
+                display: flex;
+                flex-direction: row;
+                flex-shrink: 0;
+                .kr-form-inputs {
+                    display: flex;
+                    flex-direction: column;
+                    md-select, md-form-field {
+                        width: 100%;
+                        padding: 10px 30px 10px 10px;
+                    }
+                }
+            }
+        }
+        
+    }
+}

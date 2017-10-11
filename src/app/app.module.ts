@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { ExpenseModule } from "./expense/expense.module";
 import { SharedModule } from './shared/shared.module';
+import { SignUpModule } from './sign-up/sign-up.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SharedModule } from './shared/shared.module';
     LayoutModule,
     DashboardModule,
     ExpenseModule,
-    SharedModule
+    SharedModule,
+    SignUpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
