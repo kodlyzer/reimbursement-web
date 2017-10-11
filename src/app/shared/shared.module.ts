@@ -65,7 +65,7 @@ import { UploadDocumentComponent } from './components/upload-documents/upload-do
   ],
   exports: [ToastyModule],
   providers: [
-    { provide: 'BASE_URL', useValue: 'http://localhost:62166/' },
+    { provide: 'BASE_URL', useValue: 'http://localhost:7000/' },
     EmployeeService,
     ExpenseService,
     ApproverService,
