@@ -20,7 +20,9 @@ export class ExpenseService {
             .map(res => res.json());
     }
     submitExpense(expense) {
-        return this.http.post(this.originUrl + 'api/expense', expense,  { withCredentials: true })
+        const body = JSON.stringify(expense);
+        const headers = new Headers({ 'Content-Type': 'application/json' });
+        return this.http.post(this.originUrl + 'api/expense', body,  {headers: headers, withCredentials: true })
             //Once, we get the response back, it has to get mapped to json
             .map(res => res.json());
     }

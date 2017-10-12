@@ -15,7 +15,7 @@ export class Expense {
     public ticketStatus: boolean = null;
     public reason: string = null;
     public rejectedFlag:string=null;
-    public expCategory: ExpCategory = {};
+    public expCategory: ExpCategory = {category:'Some',categoryId:18};
     public docName:string=null;
 
 }
