@@ -6,7 +6,7 @@
     </div>
     <div class="card">
       <div class="body">
-        <form id="sign_up" method="POST">
+        <form (ngSubmit)="onSubmit(signupForm)" #signupForm="ngForm" role="form">
           <div class="kr-form-inputs-container">
               <div class="kr-form-inputs">
                   <md-form-field>
@@ -97,9 +97,7 @@
                     </md-select>
                 </div>
           </div>
-          
-
-          <button md-raised-button class="btn btn-block btn-lg bg-pink" type="submit">SIGN UP</button>
+          <button md-raised-button class="btn btn-block btn-lg bg-pink" type="submit" [disabled]="!signupForm.valid">SIGN UP</button>
         </form>
       </div>
     </div>
