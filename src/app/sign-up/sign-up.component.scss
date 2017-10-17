@@ -16,12 +16,14 @@ main {
 
         form {
             .kr-form-inputs-container {
-                display: flex;
-                flex-direction: row;
-                flex-shrink: 0;
-                .kr-form-inputs {
+                @media screen and (min-width: 900px) {
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+                .kr-form-inputs {
+                    box-sizing: border-box;
+                    flex-basis: 40%;
                     md-select, md-form-field {
                         width: 100%;
                         padding: 10px 30px 10px 10px;
