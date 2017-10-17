@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { ExpenseModule } from "./expense/expense.module";
 import { SharedModule } from './shared/shared.module';
 import { SignUpModule } from './sign-up/sign-up.module';
+import { EmployeesModule } from './employees/employees.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SignUpModule } from './sign-up/sign-up.module';
     DashboardModule,
     ExpenseModule,
     SharedModule,
-    SignUpModule
+    SignUpModule,
+    EmployeesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

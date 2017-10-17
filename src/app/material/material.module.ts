@@ -7,7 +7,9 @@ import { MdButtonModule,
          MdInputModule, 
          MdNativeDateModule, 
          MdDatepickerModule,
-         MdSelectModule
+         MdSelectModule,
+         MatTableModule,
+         MdPaginatorModule
 } from '@angular/material';
 
 @NgModule({
@@ -20,7 +22,9 @@ import { MdButtonModule,
     MdFormFieldModule,
     MdNativeDateModule,
     MdDatepickerModule,
-    MdSelectModule
+    MdSelectModule,
+    MatTableModule,
+    MdPaginatorModule
   ],
   exports: [
     CommonModule,
@@ -31,7 +35,9 @@ import { MdButtonModule,
     MdFormFieldModule,
     MdNativeDateModule,
     MdDatepickerModule,
-    MdSelectModule
+    MdSelectModule,
+    MatTableModule,
+    MdPaginatorModule
   ],
   declarations: []
 })

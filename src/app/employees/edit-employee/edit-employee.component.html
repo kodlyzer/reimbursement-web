@@ -1,10 +1,11 @@
-<main class="signup-page">
-  <div class="signup-box">
-    <div class="logo">
-      <a href="javascript:void(0);">KDI <b>Reimbursement</b></a>
-      <small>Registration</small>
-    </div>
+<div class="row clearfix">
+  <div class="col-lg-12">
     <div class="card">
+      <div class="header">
+        <h2>
+          Edit Your Details
+        </h2>
+      </div>
       <div class="body">
         <form (ngSubmit)="onSubmit(f)" #f="ngForm" role="form">
           <div class="kr-form-inputs-container">
@@ -74,10 +75,10 @@
                         <input mdInput name="mothername" placeholder="Mother's Name" [(ngModel)]="employee.motherName" required="true" type="text">
                     </md-form-field>
                     <md-form-field>
-                        <input mdInput name="mdob" [mdDatepicker]="mdob" placeholder="Mother's Date of Birth" [(ngModel)]="employee.motherDob">
-                        <md-datepicker-toggle mdSuffix [for]="mdob"></md-datepicker-toggle>
-                        <md-datepicker #mdob></md-datepicker>
-                    </md-form-field>
+                      <input mdInput name="mdob" [mdDatepicker]="mdob" placeholder="Mother's Date of Birth" [(ngModel)]="employee.motherDob">
+                      <md-datepicker-toggle mdSuffix [for]="mdob"></md-datepicker-toggle>
+                      <md-datepicker #mdob></md-datepicker>
+                  </md-form-field>
                     <md-form-field>
                         <input mdInput name="emergencycontactname" placeholder="Emergency Contact Name" [(ngModel)]="employee.emergencyContactName" required="true" type="text">
                     </md-form-field>
@@ -88,9 +89,9 @@
                         <input mdInput name="emergencycontactnumber" placeholder="Emergency Contact Number" [(ngModel)]="employee.emergencyContactNumber" required="true" type="text">
                     </md-form-field>
                     <md-form-field>
-                        <input mdInput name="edob" [mdDatepicker]="edob" placeholder="Emergency Contact Date of Birth" [(ngModel)]="employee.emergencyContactDOB">
-                        <md-datepicker-toggle mdSuffix [for]="edob"></md-datepicker-toggle>
-                        <md-datepicker #edob></md-datepicker>
+                      <input mdInput name="edob" [mdDatepicker]="edob" placeholder="Emergency Contact Date of Birth" [(ngModel)]="employee.emergencyContactDOB">
+                      <md-datepicker-toggle mdSuffix [for]="edob"></md-datepicker-toggle>
+                      <md-datepicker #edob></md-datepicker>
                     </md-form-field>
                     <md-select name="selectApprover" placeholder="Reporting Manager" [(ngModel)]="employee.reportingManager" required="true">
                         <md-option *ngFor="let approver of approvers" [value]="approver.name">
@@ -99,9 +100,9 @@
                     </md-select>
                 </div>
           </div>
-          <button md-raised-button class="btn btn-block btn-lg bg-pink" type="submit" [disabled]="!f.valid">SIGN UP</button>
+          <button type="submit" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10" [disabled]="!f.valid">Submit</button>
         </form>
       </div>
     </div>
   </div>
-</main>
+</div>

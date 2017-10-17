@@ -1,0 +1,43 @@
+<div class="row clearfix">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="header">
+        <h2>
+          My Expenses
+        </h2>
+      </div>
+      <div class="body table-responsive">
+        <table class="table">
+          <thead>
+              <tr>
+                <th>Expense Id</th>
+                <th>Expense Date</th>
+                <th>Submit Date</th>
+                <th>Approved Date</th>
+                <th>Expense Amount</th>
+                <th>Approver Name</th>
+                <th>Status</th>
+                <th class="text-center">Details</th>
+                <th class="text-center">Upload Documents</th>
+                <th class="text-center">Edit</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let expense of expenses">
+              <td>{{expense.expenseId}}</td>
+              <td>{{expense.expenseDate | date: 'dd/MM/yyyy'}}</td>
+              <td>{{expense.submitDate | date: 'dd/MM/yyyy'}}</td>
+              <td>{{expense.approvedDate | date: 'dd/MM/yyyy'}}</td>
+              <td>{{expense.totalAmount}}</td>
+              <td>{{expense.approverName}}</td>
+              <td>{{expense.ticketStatus}}</td>
+              <td class="text-center"><a [routerLink]="['/detail-view/', expense.expenseId]" md-raised-button color="primary" class='btn btn-info btn-sm'><span class="glyphicon glyphicon-book"></span> Details</a></td>
+              <td class="text-center"><a [routerLink]="['/upload-document/', expense.expenseId]" md-raised-button color="primary" class='btn btn-info btn-sm'><span class="glyphicon glyphicon-book"></span> Upload Document</a></td>
+              <td class="text-center"><a [routerLink]="['/edit-expense/', expense.expenseId]" md-raised-button color="primary" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

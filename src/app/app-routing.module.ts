@@ -13,19 +13,23 @@ import { FetchExpenseComponent } from "./shared/components/fetch-expense/fetch-e
 import { MyExpensesComponent } from "./shared/components/my-expenses/my-expenses.component";
 import { DetailViewComponent } from "./shared/components/detail-view/detail-view.component";
 import { EditExpenseComponent } from "./shared/components/edit-expense/edit-expense.component";
-import { EditEmployeeComponent } from "./shared/components/edit-employee/edit-employee.component";
+import { EditEmployeeComponent } from "./employees/edit-employee/edit-employee.component";
 import { UploadDocumentComponent } from "./shared/components/upload-documents/upload-document.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
+import { MyExpenseComponent } from "./expense/my-expense/my-expense.component";
 
 @NgModule({
     imports: [
         RouterModule.forRoot(
             [{
                 path: '',
+                redirectTo: '/home',
+                pathMatch: 'full'
+            }, {
+                path: '',
                 component: MainComponent,
                 children: [
                     { path: 'home', component: DashboardComponent }, 
-                    { path: 'newexpense', component: SubmitExpenseComponent},
                     { path: 'counter', component: CounterComponent },
                     { path: 'fetch-data', component: FetchDataComponent },
                     { path: 'employee', component: EmployeeComponent },
@@ -33,11 +37,16 @@ import { SignUpComponent } from "./sign-up/sign-up.component";
                     { path: 'search-employee', component: SearchEmployeeComponent },
                     { path: 'new-expense', component: NewExpenseComponent },
                     { path: 'fetch-expense', component: FetchExpenseComponent },
-                    { path: 'my-expenses', component: MyExpensesComponent },
+                    //{ path: 'my-expenses', component: MyExpensesComponent },
                     { path: 'detail-view/:id', component: DetailViewComponent },
                     { path: 'edit-expense/:id', component: EditExpenseComponent },
+                    //{ path: 'edit-employee', component: EditEmployeeComponent },
+                    { path: 'upload-document/:id', component: UploadDocumentComponent },
+
+                    { path: 'newexpense', component: SubmitExpenseComponent},
+                    { path: 'my-expenses', component: MyExpenseComponent },
+
                     { path: 'edit-employee', component: EditEmployeeComponent },
-                    { path: 'upload-document/:id', component: UploadDocumentComponent }
                 ]
             }]
            // { enableTracing: true } // <-- debugging purposes only

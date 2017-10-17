@@ -56,7 +56,8 @@ import { UploadDocumentComponent } from './components/upload-documents/upload-do
   exports: [
     HttpModule,
     FormsModule,
-    ToastyModule
+    ToastyModule,
+    RouterModule
   ],
   providers: [
     { provide: 'BASE_URL', useValue: baseUrl },

@@ -7,7 +7,7 @@
         </h2>
       </div>
       <div class="body">
-        <form (ngSubmit)="onSubmit(f)" #newExpenseFrom="ngForm" role="form">
+        <form (ngSubmit)="onSubmit(newExpenseFrom)" #newExpenseFrom="ngForm" role="form">
           <div class="kr-form-inputs">
             <md-form-field>
               <input name="expense-date" mdInput [mdDatepicker]="expenseDatePicker" placeholder="Expense Date" [(ngModel)]="expense.expenseDate" required="true">
@@ -40,7 +40,7 @@
               </md-select>
           </div>
           <br/>
-          <button type="submit" md-raised-button class="btn btn-primary m-t-15 m-l-10" [disabled]="!newExpenseFrom.valid">Submit</button>
+          <button type="submit" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10" [disabled]="!newExpenseFrom.valid">Submit</button>
         </form>
       </div>
     </div>
