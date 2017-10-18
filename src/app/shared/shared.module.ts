@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ToastyModule } from "ng2-toasty";
+import { FlexLayoutModule } from "@angular/flex-layout"
 
 import { EmployeeService } from './services/employee.service';
 import { ExpenseService } from './services/expense.service';
@@ -37,7 +38,8 @@ import { UploadDocumentComponent } from './components/upload-documents/upload-do
     HttpModule,
     FormsModule,
     ToastyModule.forRoot(),
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    FlexLayoutModule
   ],
   declarations: [
     FetchDataComponent,
@@ -57,7 +59,8 @@ import { UploadDocumentComponent } from './components/upload-documents/upload-do
     HttpModule,
     FormsModule,
     ToastyModule,
-    RouterModule
+    RouterModule,
+    FlexLayoutModule
   ],
   providers: [
     { provide: 'BASE_URL', useValue: baseUrl },
