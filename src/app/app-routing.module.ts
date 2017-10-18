@@ -17,6 +17,7 @@ import { EditEmployeeComponent } from "./employees/edit-employee/edit-employee.c
 import { UploadDocumentComponent } from "./shared/components/upload-documents/upload-document.component";
 import { SignUpComponent } from "./sign-up/sign-up.component";
 import { MyExpenseComponent } from "./expense/my-expense/my-expense.component";
+import { EmployeesListComponent } from "./employees/employees-list/employees-list.component";
 
 @NgModule({
     imports: [
@@ -32,7 +33,7 @@ import { MyExpenseComponent } from "./expense/my-expense/my-expense.component";
                     { path: 'home', component: DashboardComponent }, 
                     { path: 'counter', component: CounterComponent },
                     { path: 'fetch-data', component: FetchDataComponent },
-                    { path: 'employee', component: EmployeeComponent },
+                    // { path: 'employee', component: EmployeeComponent },
                     { path: 'new-employee', component: NewEmployeeComponent },
                     { path: 'search-employee', component: SearchEmployeeComponent },
                     { path: 'new-expense', component: NewExpenseComponent },
@@ -47,6 +48,7 @@ import { MyExpenseComponent } from "./expense/my-expense/my-expense.component";
                     { path: 'my-expenses', component: MyExpenseComponent },
 
                     { path: 'edit-employee', component: EditEmployeeComponent },
+                    { path: 'employee', component: EmployeesListComponent },
                 ]
             }]
            // { enableTracing: true } // <-- debugging purposes only

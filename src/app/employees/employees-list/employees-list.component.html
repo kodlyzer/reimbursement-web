@@ -1,0 +1,39 @@
+<div class="row clearfix">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="header row clearfix">
+        <h2 class="col-md-3">
+          Employees
+        </h2>
+        <form class="col-md-4 pull-right">
+            <md-form-field>
+              <input mdInput placeholder="Search">
+            </md-form-field>
+        </form>
+      </div>
+      <div class="body table-responsive">
+        <table class="table">
+          <thead>
+              <tr>
+                <th>Employee Name</th>
+                <th>Employee Id</th>
+                <th>Designation</th>
+                <th>Reporting Manager</th>
+                <th></th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let employee of employees">
+              <td>{{employee.employeeName}}</td>
+              <td>{{employee.employeeId}}</td>
+              <td>{{employee.designation}}</td>
+              <td>{{employee.reportingManager}}</td>
+              <td class="text-center"><a md-mini-fab routerLink="." color="basic">...</a></td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
