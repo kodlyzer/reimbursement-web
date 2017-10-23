@@ -12,10 +12,10 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./edit-employee.component.scss']
 })
 export class EditEmployeeComponent implements OnInit {
-
+  heading: string;
+  empId: number;
   employee: Employee = new Employee();
   approvers;
-
 
   @ViewChild('empIdInput') empIdInput;
   constructor(
@@ -25,6 +25,10 @@ export class EditEmployeeComponent implements OnInit {
     private approverService: ApproverService,
     private toastyService: ToastyService) {
 
+    route.params.subscribe(p => {
+      this.empId = +p['id'];
+    });
+
   }
 
   ngOnInit() {
@@ -33,26 +37,13 @@ export class EditEmployeeComponent implements OnInit {
         this.approvers = app;
       });
 
-    this.employeeService.getEmployeeByUserName()
-      .subscribe(e => {
-        this.employee = e[0];
-        this.toastyService.success({
-          title: 'Success',
-          msg: 'Employee Info Retrieved Successfully!',
-          theme: 'bootstrap',
-          showClose: true,
-          timeout: 5000
-        });
-      },
-      err => {
-        this.toastyService.error({
-          title: 'Error',
-          msg: 'Error Occured while Fetching Details!',
-          theme: 'bootstrap',
-          showClose: true,
-          timeout: 5000
-        });
-      });
+    if (this.empId) {
+      this.heading = "Employee Details";
+      this.getEmployeeById(this.empId)
+    } else {
+      this.heading = "Edit Your Details";
+      this.getEmployeeByUsername();
+    }
   }
 
   onSubmit(form: NgForm) {
@@ -105,4 +96,34 @@ export class EditEmployeeComponent implements OnInit {
       });
   }
 
+
+  private getEmployeeByUsername() {
+    this.onDetailsFetchComplete(this.employeeService.getEmployeeByUserName());
+  }
+
+  private getEmployeeById(id) {
+    this.onDetailsFetchComplete(this.employeeService.getEmployee(id));
+  }
+
+  private onDetailsFetchComplete(empObservable) {
+    empObservable
+      .subscribe(e => {
+        this.employee = e[0];
+        this.toastyService.success({
+          title: 'Success',
+          msg: 'Employee Info Retrieved Successfully!',
+          theme: 'bootstrap',
+          showClose: true,
+          timeout: 5000
+        });
+      }, err => {
+        this.toastyService.error({
+          title: 'Error',
+          msg: 'Error Occured while Fetching Details!',
+          theme: 'bootstrap',
+          showClose: true,
+          timeout: 5000
+        });
+      });
+  }
 }

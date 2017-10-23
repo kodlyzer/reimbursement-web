@@ -3,7 +3,7 @@
     <div class="card">
       <div class="header">
         <h2>
-          Edit Your Details
+            {{heading}}
         </h2>
       </div>
       <div class="body">
@@ -101,6 +101,7 @@
                 </div>
           </div>
           <button type="submit" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10" [disabled]="!f.valid">Submit</button>
+          <button *ngIf="empId" type="button" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10" routerLink="/employee" >Back</button>
         </form>
       </div>
     </div>

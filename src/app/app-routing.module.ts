@@ -35,7 +35,7 @@ import { EmployeesListComponent } from "./employees/employees-list/employees-lis
                     { path: 'fetch-data', component: FetchDataComponent },
                     // { path: 'employee', component: EmployeeComponent },
                     { path: 'new-employee', component: NewEmployeeComponent },
-                    { path: 'search-employee', component: SearchEmployeeComponent },
+                    // { path: 'search-employee', component: SearchEmployeeComponent },
                     { path: 'new-expense', component: NewExpenseComponent },
                     { path: 'fetch-expense', component: FetchExpenseComponent },
                     //{ path: 'my-expenses', component: MyExpensesComponent },
@@ -48,6 +48,8 @@ import { EmployeesListComponent } from "./employees/employees-list/employees-lis
                     { path: 'my-expenses', component: MyExpenseComponent },
 
                     { path: 'edit-employee', component: EditEmployeeComponent },
+                    { path: 'view-edit-employee/:id', component: EditEmployeeComponent },
+                    
                     { path: 'employee', component: EmployeesListComponent },
                 ]
             }]
