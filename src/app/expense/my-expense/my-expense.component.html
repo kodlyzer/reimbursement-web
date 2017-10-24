@@ -17,9 +17,7 @@
                 <th>Expense Amount</th>
                 <th>Approver Name</th>
                 <th>Status</th>
-                <th class="text-center">Details</th>
                 <th class="text-center">Upload Documents</th>
-                <th class="text-center">Edit</th>
               </tr>
           </thead>
           <tbody>
@@ -31,9 +29,8 @@
               <td>{{expense.totalAmount}}</td>
               <td>{{expense.approverName}}</td>
               <td>{{expense.ticketStatus}}</td>
-              <td class="text-center"><a [routerLink]="['/detail-view/', expense.expenseId]" md-raised-button color="primary" class='btn btn-info btn-sm'><span class="glyphicon glyphicon-book"></span> Details</a></td>
               <td class="text-center"><a [routerLink]="['/upload-document/', expense.expenseId]" md-raised-button color="primary" class='btn btn-info btn-sm'><span class="glyphicon glyphicon-book"></span> Upload Document</a></td>
-              <td class="text-center"><a [routerLink]="['/edit-expense/', expense.expenseId]" md-raised-button color="primary" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+              <td class="text-center"><a md-mini-fab routerLink="/detail-view/{{expense.expenseId}}" color="basic">...</a></td>
             </tr>
           </tbody>
         </table>

@@ -18,6 +18,7 @@ import { UploadDocumentComponent } from "./shared/components/upload-documents/up
 import { SignUpComponent } from "./sign-up/sign-up.component";
 import { MyExpenseComponent } from "./expense/my-expense/my-expense.component";
 import { EmployeesListComponent } from "./employees/employees-list/employees-list.component";
+import { ExpenseDetailsComponent } from "./expense/expense-details/expense-details.component";
 
 @NgModule({
     imports: [
@@ -39,13 +40,14 @@ import { EmployeesListComponent } from "./employees/employees-list/employees-lis
                     { path: 'new-expense', component: NewExpenseComponent },
                     { path: 'fetch-expense', component: FetchExpenseComponent },
                     //{ path: 'my-expenses', component: MyExpensesComponent },
-                    { path: 'detail-view/:id', component: DetailViewComponent },
+                    //{ path: 'detail-view/:id', component: DetailViewComponent },
                     { path: 'edit-expense/:id', component: EditExpenseComponent },
                     //{ path: 'edit-employee', component: EditEmployeeComponent },
                     { path: 'upload-document/:id', component: UploadDocumentComponent },
 
                     { path: 'newexpense', component: SubmitExpenseComponent},
                     { path: 'my-expenses', component: MyExpenseComponent },
+                    { path: 'detail-view/:id', component: ExpenseDetailsComponent },
 
                     { path: 'edit-employee', component: EditEmployeeComponent },
                     { path: 'view-edit-employee/:id', component: EditEmployeeComponent },
