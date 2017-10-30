@@ -3,7 +3,7 @@
     <div class="card">
       <div class="header">
         <h2>
-          Submit Expense
+          {{heading}}
         </h2>
       </div>
       <div class="body">
@@ -33,14 +33,15 @@
             <md-form-field>
                 <input name="details" mdInput placeholder="Expense Details" [(ngModel)]="expense.expenseDetails" required="true">
             </md-form-field>
-            <md-select name="reporting-manager" placeholder="Reporting Manager" [(ngModel)]="expense.approverId" required="true">
+            <md-select *ngIf="!isEdit" name="reporting-manager" placeholder="Reporting Manager" [(ngModel)]="expense.approverId" required="true">
                 <md-option *ngFor="let approver of approvers" [value]="approver.approverId" >
                   {{ approver.name }}
                 </md-option>
-              </md-select>
+            </md-select>
           </div>
           <br/>
           <button type="submit" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10" [disabled]="!newExpenseFrom.valid">Submit</button>
+          <button type="button" routerLink="/detail-view/{{expense.expenseId}}" *ngIf="isEdit" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10" >Back</button>
         </form>
       </div>
     </div>

@@ -14,7 +14,6 @@ import { NgForm } from '@angular/forms';
 })
 export class ExpenseDetailsComponent implements OnInit {
   expenses: Expense = new Expense();
-  isEdit: boolean;
   docs: any[] = [];
   pdfs: any[] = [];
   expense: Expense = new Expense();
@@ -94,7 +93,6 @@ export class ExpenseDetailsComponent implements OnInit {
 
     this.expenseService.editExpense(formData)
       .subscribe(exp => {
-        this.isEdit = false;
         this.toastyService.success({
           title: 'Success',
           msg: 'Expense Edited Successfully',
@@ -104,7 +102,6 @@ export class ExpenseDetailsComponent implements OnInit {
         });
       },
       err => {
-        this.isEdit = false;
         this.toastyService.error({
           title: 'Error',
           msg: 'An unexpected error occured while editing Expense!',

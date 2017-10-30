@@ -37,15 +37,17 @@ import { ExpenseDetailsComponent } from "./expense/expense-details/expense-detai
                     // { path: 'employee', component: EmployeeComponent },
                     { path: 'new-employee', component: NewEmployeeComponent },
                     // { path: 'search-employee', component: SearchEmployeeComponent },
-                    { path: 'new-expense', component: NewExpenseComponent },
+                    // { path: 'new-expense', component: NewExpenseComponent },
                     { path: 'fetch-expense', component: FetchExpenseComponent },
                     //{ path: 'my-expenses', component: MyExpensesComponent },
                     //{ path: 'detail-view/:id', component: DetailViewComponent },
-                    { path: 'edit-expense/:id', component: EditExpenseComponent },
+                    //{ path: 'edit-expense/:id', component: EditExpenseComponent },
                     //{ path: 'edit-employee', component: EditEmployeeComponent },
                     { path: 'upload-document/:id', component: UploadDocumentComponent },
 
-                    { path: 'newexpense', component: SubmitExpenseComponent},
+                    { path: 'new-expense', component: SubmitExpenseComponent},
+                    { path: 'edit-expense/:id', component: SubmitExpenseComponent},
+
                     { path: 'my-expenses', component: MyExpenseComponent },
                     { path: 'detail-view/:id', component: ExpenseDetailsComponent },
 

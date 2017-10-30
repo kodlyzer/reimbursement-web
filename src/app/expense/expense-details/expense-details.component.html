@@ -128,10 +128,7 @@
                     </fieldset>
                 </div>
             </div>
-            <button type="button" *ngIf="!isEdit" (click)="isEdit=true" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10">Edit</button>
-            <button type="submit" *ngIf="isEdit" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10">Save</button>
-            <button type="button" *ngIf="!isEdit" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10" routerLink="/my-expenses">Back</button>
-            <button type="button" *ngIf="isEdit" (click)="isEdit=false" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10">Cancel</button>
+            <button type="button" routerLink="/edit-expense/{{expense.expenseId}}" md-raised-button color="primary" class="btn btn-primary m-t-15 m-l-10">Edit</button>
           </form>
         </div>
       </div>
